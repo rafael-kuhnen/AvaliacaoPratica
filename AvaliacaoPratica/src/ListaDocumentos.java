@@ -29,13 +29,23 @@ public class ListaDocumentos {
             return;
         }
         for (Documento documento : listaDocumentos) {
-            System.out.println("\nTítulo: " + documento.getTitulo() + "\n Descrição: " + documento.getDescricao());
+            System.out.println("\nTítulo: " + documento.getTitulo());
         }
+    }
+    public void exibirDocumento(String titulo) {
+        for (Documento documento : listaDocumentos) {
+            if (documento.getTitulo().equalsIgnoreCase(titulo)) {
+                System.out.println("\nTítulo: " + documento.getTitulo());
+                System.out.println("\nDescrição: " + documento.getDescricao());
+                return;
+            }
+        }
+        System.out.println("\nDocumento com o título '" + titulo + "' não encontrado.");
     }
 
     public void editarDocumento(String titulo, String novaDescricao) {
         for (Documento documento : listaDocumentos) {
-            if (documento.getTitulo().equals(titulo)) {
+            if (documento.getTitulo().equalsIgnoreCase(titulo)) {
                 documento.setDescricao(novaDescricao);
                 System.out.println("\nDocumento atualizado com sucesso.");
                 return;

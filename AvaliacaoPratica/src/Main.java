@@ -13,21 +13,15 @@ public class Main {
         // Criação de usuários administradores
         Usuario usuario0 = new Usuario("Rafael Kuhnen", "rafael.kuhnen@adm.com", "adm123", p0);
         // criação de usuários editores
-        Usuario usuario1 = new Usuario("João Silva", "joao.silve@editor.com", "editor123", p1);
-        Usuario usuario2 = new Usuario("Maria Oliveira", "maria.oliveira@editor.com", "editor456", p1);
+        Usuario usuario1 = new Usuario("João Silva", "joao.silva@editor.com", "editor123", p1);
         // criação de usuários visualizadores
-        Usuario usuario3 = new Usuario("Ana Souza", "ana.souza@visu.com", "visu123", p2);
-        Usuario usuario4 = new Usuario("Carlos Eduardo", "carlos.edu@visu.com", "visu456", p2);
-        Usuario usuario5 = new Usuario("Magno Pinto", "magno.pinto@visu.com", "visu789", p2);
+        Usuario usuario2 = new Usuario("Ana Souza", "ana.souza@visu.com", "visu123", p2);
 
         // Criação da lista de usuários
         ListaUsuarios listaUsers = new ListaUsuarios();
         listaUsers.adicionarUsuario(usuario0);
         listaUsers.adicionarUsuario(usuario1);
         listaUsers.adicionarUsuario(usuario2);
-        listaUsers.adicionarUsuario(usuario3);
-        listaUsers.adicionarUsuario(usuario4);
-        listaUsers.adicionarUsuario(usuario5);
 
         ListaDocumentos listaDocs = new ListaDocumentos();
 
@@ -37,22 +31,22 @@ public class Main {
 
             int login = 0;
 
+            limparConsole();
+
             System.out.println("Bem vindo ao sistema de gerenciamento de usuários!\n" +
                     "Informe seu email e senha para acessar o sistema.\n");
 
             try {
-                Thread.sleep(3000); // Atraso de 2 segundos (2000 milissegundos)
+                Thread.sleep(3000); //delay de 3 segundos
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
-
-            limparConsole();
 
             Usuario temporario = new Usuario("a", "a@.com", "as", p2);
 
             do {
                 try {
-                    Thread.sleep(2000); // Atraso de 2 segundos (2000 milissegundos)
+                    Thread.sleep(2000); 
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 }
@@ -78,7 +72,7 @@ public class Main {
                     limparConsole();
                     System.out.println("Usuário autenticado com sucesso!\n");
                     try {
-                        Thread.sleep(2000); // Atraso de 2 segundos (2000 milissegundos)
+                        Thread.sleep(2000); 
                     } catch (InterruptedException e) {
                         e.printStackTrace();
                     }
@@ -86,7 +80,7 @@ public class Main {
                     if (login == 0) {
                         System.out.println("Usuário não encontrado ou senha incorreta. Tente novamente.\n");
                         try {
-                            Thread.sleep(2000); // Atraso de 2 segundos (2000 milissegundos)
+                            Thread.sleep(2000); 
                         } catch (InterruptedException e) {
                             e.printStackTrace();
                         }
@@ -100,7 +94,7 @@ public class Main {
             int acoes = 1;
 
             try {
-                Thread.sleep(2000); // Atraso de 2 segundos (2000 milissegundos)
+                Thread.sleep(2000); 
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
@@ -135,7 +129,7 @@ public class Main {
                 sc.nextLine(); // Consumir a quebra de linha pendente
 
                 try {
-                    Thread.sleep(1500); // Atraso de 2 segundos (2000 milissegundos)
+                    Thread.sleep(1500); 
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 }
@@ -146,11 +140,14 @@ public class Main {
                     case 1:
                         listaDocs.exibirDocumentos();
                         try {
-                            Thread.sleep(3000); // Atraso de 2 segundos (2000 milissegundos)
+                            Thread.sleep(1000); 
                         } catch (InterruptedException e) {
                             e.printStackTrace();
                         }
+                        listaDocs.exibirDocumento(sc.nextLine());
+                        String enter = sc.nextLine();
 
+                        
                         limparConsole();
                         break;
 
@@ -158,7 +155,7 @@ public class Main {
                         if (temporario.getPerfil() == Perfil.VISUALIZADOR) {
                             System.out.println("Ação não permitida para seu perfil.");
                             try {
-                                Thread.sleep(3000); // Atraso de 2 segundos (2000 milissegundos)
+                                Thread.sleep(3000); 
                             } catch (InterruptedException e) {
                                 e.printStackTrace();
                             }
@@ -173,7 +170,7 @@ public class Main {
                             listaDocs.editarDocumento(titulo, descricao);
                         }
                         try {
-                            Thread.sleep(3000); // Atraso de 2 segundos (2000 milissegundos)
+                            Thread.sleep(3000); 
                         } catch (InterruptedException e) {
                             e.printStackTrace();
                         }
@@ -195,7 +192,7 @@ public class Main {
                             System.out.println("\nDocumento adicionado com sucesso.");
                         }
                         try {
-                            Thread.sleep(3000); // Atraso de 2 segundos (2000 milissegundos)
+                            Thread.sleep(3000); 
                         } catch (InterruptedException e) {
                             e.printStackTrace();
                         }
@@ -224,7 +221,7 @@ public class Main {
                             }
                         }
                         try {
-                            Thread.sleep(3000); // Atraso de 2 segundos (2000 milissegundos)
+                            Thread.sleep(3000); 
                         } catch (InterruptedException e) {
                             e.printStackTrace();
                         }
@@ -234,7 +231,7 @@ public class Main {
                     case 0:
                         System.out.println("Saindo do sistema. Até logo!");
                         try {
-                            Thread.sleep(3000); // Atraso de 2 segundos (2000 milissegundos)
+                            Thread.sleep(3000); 
                         } catch (InterruptedException e) {
                             e.printStackTrace();
                         }
